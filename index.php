@@ -13,30 +13,75 @@
 	<link rel="stylesheet" href="css/estilos.css" />
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("body").css({"overflow-y":"hidden"});
+        var alto=$(window).height();
+        $("body").append("<div id='pre-load-web'><div id='imagen-load'><img src='img/logo.png' alt='Crasil' /><br><img src='img/loader.gif'  /><br />Cargando...</div>");
+        $("#pre-load-web").css({height:alto+"px"});
+        $("#imagen-load").css({"margin-top":(alto/2)-30+"px"});
+    })
+    $(window).load(function(){
+        $("#pre-load-web").fadeOut(1000,function() {
+            $(this).remove();
+            $("body").css({"overflow-y":"auto"});
+        });
+    })
+    </script>
 </head>
 <body>
     <div id="cuerpo">
         <header class="cabecera">
             <div class="logo">
-                <img src="" alt="" />
+                <a href="." title="Corasil">
+                    <img src="img/logo.png" alt="Crasil" />
+                </a>
+            </div>
+            <div class="redes">
+                <figure>
+                    <a href="https://www.facebook.com/agroindustrias.corasil.1?fref=ts" target="_blank"><img src="img/fb.png" /></a>
+                </figure>
+                <figure>
+                    <a href="http://www.youtube.com/channel/UCmvuL3lld3H-wEo6br99mJw" target="_blank"><img src="img/yb.png" /></a>
+                </figure>
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="">Nosotros</a></li>
-                    <li><a href="">Galeria</a></li>
-                    <li><a href="">Videos</a></li>
-                    <li><a href="">Contàctenos</a></li>
+                    <li id="contenido-5" data-id="5">Nosotros</li>
+                    <li id="contenido-6" data-id="6">Galeria</li>
+                    <li id="contenido-7" data-id="7">Videos</li>
+                    <li id="contenido-8" data-id="8">Contàctenos</li>
                 </ul>
             </nav>
-            <div class="redes">
-                <figure>
-                    <a href=""><img src="img/fb.png" /></a>
-                </figure>
-                <figure>
-                    <a href=""><img src="img/yb.png" /></a>
-                </figure>
-            </div>
         </header>
+        <section class="cuerpo">
+            <figure class="logo">
+                <a href="." title="Corasil">
+                    <img src="img/logo.png" alt="Crasil" />
+                </a>
+            </figure>
+            <article class="flechas1">
+                <div class="btn" id="contenido-1" data-id="1">MIO CIC</div>
+                <div class="flecha1"></div>
+            </article>
+            <article class="flechas2">
+                <div class="btn" id="contenido-2" data-id="2">CORAFORTE 5G</div>
+                <div class="flecha2"></div>
+            </article>
+            <article class="flechas3">
+                <div class="btn" id="contenido-3" data-id="3">CILIMAX 3X</div>
+                <div class="flecha3"></div>
+            </article>
+            <article class="flechas4">
+                <div class="btn" id="contenido-4" data-id="4">PREGUNTAS</div>
+                <div class="flecha4"></div>
+            </article>
+            <figure class="arbol">
+                <img src="img/arbol.png" />
+            </figure>
+            <div id="mensaje"></div>
+        </section>
     </div>
     <script src="js/main.js"></script>
     <script>

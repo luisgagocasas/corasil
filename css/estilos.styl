@@ -7,11 +7,16 @@ vendor-prefixes = o ms moz webkit
   font-style normal
   font-weight 400
   src local('Dosis Regular'), local('Dosis-Regular'), url("fonts/xIAtSaglM8LZOYdGmG1JqQ.woff") format('woff')
+
 @font-face
   font-family 'Open Sans'
   font-style normal
   font-weight 400
   src local('Open Sans'), local('OpenSans'), url("fonts/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff") format('woff')
+
+@font-face
+	font-family 'Berlin Sans Fb Demi'
+	src url('fonts/berlin-sans-fb-demi-bold.ttf') format ('ttf')
 
 border-radius()
 	-webkit-border-radius arguments
@@ -45,10 +50,12 @@ html,button,input,select,textarea
 	color #222
 
 body
-	background #45505C
+	// background #45505C
 	color #323E4A
 	font-family 'Open Sans',Arial,Sans-serif
 	font-size 16px
+	margin 0px
+	background #EE4637 url("../img/bg.png") no-repeat center
 
 ::-moz-selection
 	background #ffa500
@@ -79,49 +86,259 @@ fieldset
 textarea
 	resize vertical
 
+#pre-load-web
+	width 100%
+	position absolute
+	background #4683CE
+	left 0px
+	top 0px
+	z-index 100000
+
+	#imagen-load
+		left 50%
+		margin-left -150px
+		position absolute
+		text-align center
+
 #cuerpo
 	width 100%
-	margin 0px auto 0px auto
-	background #FFFFFF
-	padding 0px 0px 0px 0px
-	box-shadow 0px 0px 10px #000
-	border-radius 6px
+	min-height 100%
 
 	.cabecera
 		margin 0px auto 0px auto
 		width 1000px
-		height auto
+		height 40px
+		background-color #FFCC29
 
 		.logo
 			float left
-			width 300px
+			width 140px
 			height auto
-			display block
+			background-color #ffcc29
+			margin 0px 0px 0px 0px
+			padding 5px 5px 2px 5px
+			border-radius 0px 0px 10px 10px
 
 			img
 				width 100%
 
 		.menu
+			margin 0px auto 0 auto
+			width 55%
+			text-align center
+			padding 1px 0px 0px 0px
+
 			ul
 				margin 0px 0px 0px 0px
 				padding 0px 0px 0px 0px
 
 				li
 					margin 0px 0px 0px 0px
-					padding 0px 0px 0px 0px
+					padding 5px 5px 5px 5px
 					list-style none
+					display inline-block
+					color #00A859
+					font-weight bold
+					font-size 20px
+					cursor pointer
 
-					a
-						text-decoration none
-						padding 0px 0px 0px 0px
-						color #ffa500
-						font-weight bold
+					&:hover
+						background-color rgba(255, 255, 255, 0.5)
 
 		.redes
 			float right
+			margin 0px 0px 0px 0px
+			padding 0px 10px 0 10px
+			background-color #ffcc29
+			border-radius 0px 0px 10px 10px
 
+			figure
+				padding 0px 5px 0px 5px
+				margin 0px 0px 0px 5px
+				display inline-block
 
+				a
+					text-decoration none
+					display block
+					width 46px
 
+					img
+						display block
+						width 100%
+
+	.cuerpo
+		margin 0px auto 0px auto
+		width 845px
+
+		.arbol
+			width 340px
+			margin 0px auto
+			z-index 5
+
+			img
+				width 100%
+
+		.logo
+			width 300px
+			height auto
+			margin 30px auto 0px auto
+			padding 0px 0px 0px 0px
+
+			a
+				display block
+
+				img
+					width 100%
+
+		.logo2
+			width 300px
+			height auto
+			margin 30px auto 0px auto
+			padding 0px 0px 5px 0px
+			opacity 1
+
+			a
+				display block
+
+				img
+					width 100%
+
+		.ocultar
+			opacity 0
+
+		.flechas1, .flechas2, .flechas3, .flechas4
+			padding 0px 0px 0px 0px
+			position absolute
+
+		.flechas1
+			margin 120px 0px 0px 0px
+
+			.flecha1:after
+				position absolute
+				width 0
+				height 0
+				border-left 20px solid transparent
+				border-right 15px solid #EF4637
+				border-top 120px solid #EF4637
+				content " "
+				margin -45px 0px 0px 275px
+				border-bottom 64px solid transparent
+				transform rotate(-45deg)
+				z-index 10
+
+		.flechas2
+			margin 500px 0px 0px 0px
+
+			.flecha2:after
+				position absolute
+				width 0
+				height 0
+				border-left 20px solid transparent
+				border-right 15px solid #EF4637
+				border-top 120px solid #EF4637
+				content " "
+				margin -170px 0px 0px 280px
+				border-bottom 64px solid transparent
+				transform rotate(-130deg)
+				z-index 10
+
+		.flechas3
+			margin 120px 0 0 600px
+
+			.flecha3:after
+				position absolute
+				width 0
+				height 0
+				border-left 20px solid transparent
+				border-right 15px solid #EF4637
+				border-top 120px solid #EF4637
+				content " "
+				margin -65px 0 0 -70px
+				border-bottom 64px solid transparent
+				transform rotate(60deg)
+				z-index 10
+
+		.flechas4
+			margin 500px 0 0 600px
+
+			.flecha4:after
+				position absolute
+				width 0
+				height 0
+				border-left 20px solid transparent
+				border-right 15px solid #EF4637
+				border-top 120px solid #EF4637
+				content " "
+				margin -180px 0 0 -55px
+				border-bottom 64px solid transparent
+				transform rotate(140deg)
+				z-index 10
+
+		.btn
+			background url("../img/btn.png") no-repeat
+			display block
+			width: 245px
+			height: 38px
+			font-family 'Berlin Sans Fb Demi',Arial,Sans-serif
+			font-size 25px
+			text-align center
+			line-height 35px
+			color #ed3237
+			z-index 15
+			position relative
+			cursor pointer
+
+		.contenido
+			position absolute
+			width 850px
+			height auto
+			top 12px
+			left 50%
+			margin-left -430px
+			padding 5px 5px 5px 5px
+			z-index 11520
+			transition opacity 0.3s
+
+			.texto
+				display inline-block
+				padding 2px 5px 5px 5px
+				border-radius 5px
+				background-color #FFF
+				width 100%
+				min-height 600px
+				box-sizing border-box
+				text-align center
+
+				h2
+					margin 0px 0px 0px 0px
+					font-size 1.4em
+
+				p
+					margin 0px 0px 0px 0px
+					line-height 14px
+
+			.cerrar
+				font-size 15px
+				background #000
+				padding 5px
+				border-radius 20px
+				width 7px
+				height 7px
+				color #fff
+				line-height 5px
+				margin -10px -10px 0 0
+				box-shadow 0 0 2px #fff
+				cursor pointer
+				float right
+
+		.overlay
+			background rgba(0,0,0,0.5)
+			position fixed
+			top 0
+			bottom 0
+			left 0
+			right 0
+			cursor default
 
 @import "keyframes.styl"
 @import "responsive.styl"
